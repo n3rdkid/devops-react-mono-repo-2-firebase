@@ -1,0 +1,11 @@
+name: Build
+
+on:
+  push:
+   branches: 
+   - develop
+   - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest

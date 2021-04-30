@@ -1,0 +1,43 @@
+name: Build
+
+on:
+  push:
+   branches: 
+   - DEVOPS-*
+   - SYS-* 
+  pull_request:
+    branches:
+      - develop
+      - DEVOPS-*
+      - SYS-*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Check dependencies in cache 
+        id: yarn-cache 
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Initializing dependencies
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        run:  yarn bootstrap
+        
+      - name: Creating & Initializing env variables
