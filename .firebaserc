@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "react-mono-repo-devops",
+  },
+  "targets": {
+    "react-mono-repo-devops": {
+      "hosting": {
+        "mono-user": [
+          "admin-tenne-dev"
+        ],
+        "mono-admin": [
+          "user-tenne-dev"
+        ]
+      }
+    },
+  }
+}
