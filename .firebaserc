@@ -5,11 +5,11 @@
   "targets": {
     "react-mono-repo-devops": {
       "hosting": {
-        "mono-admin": [
-          "packages/admin/build"
+        "mono-admin": [ // Identifier
+          "mono-admin"  // Identifier exact as firebase hosting 
         ],
         "mono-user": [
-          "packages/user/build"
+          "mono-user"
         ]
       }
     }
