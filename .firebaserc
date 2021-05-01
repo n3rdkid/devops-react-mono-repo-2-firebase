@@ -6,10 +6,10 @@
     "react-mono-repo-devops": {
       "hosting": {
         "mono-user": [
-          "admin-tenne-dev"
+          "admin-user-dev"
         ],
         "mono-admin": [
-          "user-tenne-dev"
+          "user-dev"
         ]
       }
     },
