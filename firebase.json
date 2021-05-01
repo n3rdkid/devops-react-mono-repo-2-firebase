@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "mono-admin",  
-      "public": "packages/admin/build", 
+      "public": "./packages/admin/build", 
       "ignore": [
         "firebase.json",
         "**/.*",
@@ -17,7 +17,7 @@
     },
     {
       "target": "mono-user",  
-      "public": "packages/user/build",  
+      "public": "./packages/user/build",  
       "ignore": [
         "firebase.json",
         "**/.*",
