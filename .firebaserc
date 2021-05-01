@@ -1,4 +1,7 @@
 {
+  "projects": {
+    "default": "react-mono-repo-devops"
+  },
   "targets": {
     "react-mono-repo-devops": {
       "hosting": {
